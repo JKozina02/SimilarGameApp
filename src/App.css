@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  background-color: #282c34;
+  height: 100%;
+  width: 100%;
 }
 
 .App-logo {
@@ -12,7 +15,24 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+.search_games{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  justify-content: center;
+  
+}
+.search_games > div{
+  flex: 1 1;
+  margin: 25px;
+  padding: 10px;
+  min-width: 350px;
+  max-width: 350px;
+  background-color: #626366;
+}
+.search_games > div :hover{
+  cursor: pointer;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
