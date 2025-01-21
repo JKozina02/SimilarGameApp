@@ -8,7 +8,7 @@ import GameDetail from './GameDetail';
 function App() {
   const [games, setGames] = useState([]);
   const [search, setSearch] = useState("");
-
+//fetch api key 
   useEffect(() => {
     const initialize = async () => {
       try {
@@ -20,7 +20,8 @@ function App() {
 
     initialize();
   }, []);
-
+  
+//search games on writing letters
   useEffect(() => {
     const searchGames = async () => {
       if (search) {
