@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const ClientId = 'dpahxromrx2zq2oazrhjay10echshs'; // Add Client ID
-let apiKey = ''; // Initialize apiKey as an empty string
+let apiKey = ''; 
 
 export const fetchApiKey = async () => {
   try {
@@ -18,7 +18,7 @@ export const fetchGame = async (gameName) => {
   try {
     const response = await axios.post(
       '/v4/games',
-      `search "${gameName}"; fields name, genres.name, cover.url; where category = 0; limit 500;`,
+      `search "${gameName}"; fields name, genres.name, cover.url; where category = 0;`,
       {
         headers: {
           'Client-ID': ClientId,
@@ -42,7 +42,16 @@ export const fetchAllGames = async (genres) => {
     try {
       const response = await axios.post(
         '/v4/games',
-        `fields name, genres.name, cover.url, summary, keywords, themes, player_perspectives; where category = 0 & first_release_date > 946684800 & genres = (${genres.join(',')}); limit ${limit}; offset ${offset};`,
+        `fields name,
+        genres.name, 
+        cover.url, 
+        summary, 
+        keywords, 
+        themes, 
+        player_perspectives; 
+        where category = 0 & first_release_date > 946684800 & genres = (${genres.join(',')});
+        limit ${limit};
+        offset ${offset};`,
         {
           headers: {
             'Client-ID': ClientId,

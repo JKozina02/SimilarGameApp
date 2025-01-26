@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchGameDetails, fetchSimilarGames } from './models/game_data';
 import GameElement from './GameElement';
-import '.styles/App.css';
-import '.styles/GameDetail.css';
+import './styles/App.css';
+import './styles/GameDetail.css';
 
 function GameDetail() {
   const { id } = useParams();
